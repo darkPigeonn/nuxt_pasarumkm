@@ -28,7 +28,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@sweetalert2/theme-material-ui", "~/assets/main.css"],
+  css: [
+    "@sweetalert2/theme-material-ui",
+    "~/assets/main.css",
+    "bootstrap/dist/css/bootstrap.min.css",
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["~/plugins/cart.js", "~/plugins/axios"],
@@ -61,9 +65,9 @@ export default {
     baseURL: "https://api.imavi.org",
     headers: {
       common: {
-        Id: "63be7a23ee53c61a24efc736",
-        Secret: "deb5568f-bb12-4d69-8a44-a8cad4be41c3",
-        Partner: "smtb",
+        Id: process.env.APP_ID,
+        Secret: process.env.APP_SECRET,
+        Partner: process.env.PARTNER,
         "Content-Type": "application/json",
       },
     },
