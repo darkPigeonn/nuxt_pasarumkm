@@ -61,9 +61,9 @@ export default {
     baseURL: "https://api.imavi.org",
     headers: {
       common: {
-        Id: "63be7a23ee53c61a24efc736",
-        Secret: "deb5568f-bb12-4d69-8a44-a8cad4be41c3",
-        Partner: "smtb",
+        Id: process.env.APP_ID,
+        Secret: process.env.APP_SECRET,
+        Partner: process.env.PARTNER,
         "Content-Type": "application/json",
       },
     },
