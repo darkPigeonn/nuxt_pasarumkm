@@ -21,11 +21,11 @@ export default {
       categories: [
         {
           id: 1,
-          name: 'Elektronik',
+          name: 'Makanan',
         },
         {
           id: 2,
-          name: 'Pakaian',
+          name: 'Kerajinan',
         },
         {
           id: 1,
