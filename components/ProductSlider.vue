@@ -24,7 +24,7 @@
           p.name
         }}</v-card-title>
         <v-card-subtitle class="primary--text pb-3">
-          Rp {{ p.price }}
+          {{ p.price | currency }}
         </v-card-subtitle>
         <v-card-text>
           <v-chip
@@ -44,11 +44,18 @@
 </template>
 
 <script>
+import { formatCurrency } from '~/utils/formatCurrency';
 export default {
 
   props: {
     products: Array,
   },
+  computed: {
+    formattedAmount() {
+      return formatCurrency(this.amount);
+    }
+  }
+
 };
 </script>
 

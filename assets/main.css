@@ -10,3 +10,12 @@
 .swal2-container.swal2-center > .swal2-popup {
   font-family: "DM Sans" !important;
 }
+
+.text-white {
+  color : "#6b5600" !important
+}
+
+
+.text-category-product{
+  font-size : 20px !important;
+}

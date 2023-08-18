@@ -10,14 +10,14 @@
               outlined
               v-model="search"
               clearable
-              placeholder="Search"
+              placeholder="Cari"
             ></v-text-field>
             <v-list
               v-if="$vuetify.breakpoint.mdAndUp"
               color="transparent"
               subheader
             >
-              <v-subheader>Kategori</v-subheader>
+              <!-- <v-subheader>Kategori</v-subheader> -->
               <v-list-item
                 link
                 v-for="(c, i) in categories"
@@ -39,7 +39,7 @@
           <v-row>
             <template v-for="(p, i) in filteredProducts">
               <v-fade-transition :key="`product${p.id}-${i}`">
-                <v-col cols="12" md="6">
+                <v-col cols="12" md="4">
                   <v-card
                     nuxt
                     :to="`/products/${p.id}`"
@@ -66,7 +66,7 @@
                       p.name
                     }}</v-card-title>
                     <v-card-subtitle class="primary--text pb-3">
-                      Rp {{ p.price }}
+                      {{ p.price | currency }}
                     </v-card-subtitle>
                     <v-card-text>
                       <v-chip

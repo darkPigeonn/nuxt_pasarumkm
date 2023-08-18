@@ -24,7 +24,7 @@ export default {
       },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -47,7 +47,11 @@ export default {
   css: ["@sweetalert2/theme-material-ui", "~/assets/main.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/cart.js", "~/plugins/axios"],
+  plugins: [
+    "~/plugins/cart.js",
+    "~/plugins/axios",
+    { src: "~/plugins/currencyFilter", mode: "client" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

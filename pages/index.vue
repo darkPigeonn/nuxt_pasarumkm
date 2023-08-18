@@ -4,6 +4,10 @@
     <HomeCarousel :sale_items="sale_items" />
     <br /><br />
     <v-container>
+      <h1 class="text-md-h4 text-h6">Kategori Produk UMKM</h1>
+      <CategoryCard />
+    </v-container>
+    <v-container>
       <h1 class="text-md-h4 text-h6">Daftar Produk</h1>
       <br />
       <ProductSlider :products="products" />
@@ -17,6 +21,7 @@
 
     </v-container>
     <br /><br />
+    <hr />
     <Footer />
     <ScrollTop />
   </div>
