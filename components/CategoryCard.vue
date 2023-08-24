@@ -1,47 +1,120 @@
 <template>
-  <div>
-    <v-container fluid>
-      <v-row>
-        <v-col v-for="(category, index) in categories" :key="index">
-          <a href="#" style="text-decoration: none;">
-            <v-card class="mx-auto" max-width="200" color="#ddd">
-              <v-card-text class="text-center text-category-product">{{ category.name }}</v-card-text>
+  <v-section class="shop-category-area">
+    <v-container>
+
+      <div class="shop-category-wrap">
+        <v-row>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Makanan</div>
+              </v-img>
             </v-card>
-          </a>
-        </v-col>
-      </v-row>
+          </v-col>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Kerajinan Tangan </div>
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Pakaian</div>
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Jasa</div>
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Benda Rohani</div>
+              </v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="6" md="2">
+            <v-card class="shop-category-single-item">
+              <v-img
+                src="https://uploads-ssl.webflow.com/63e857eaeaf853471d5335ff/63e8c4e570738029a725e686_Furniture-min.png"
+                alt="Furniture"
+                loading="lazy"
+                class="category-image"
+              >
+                <div class="category-text">Elektronik</div>
+              </v-img>
+            </v-card>
+          </v-col>
+          <!-- Add other categories here using the same structure -->
+        </v-row>
+      </div>
     </v-container>
-  </div>
+  </v-section>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      categories: [
-        {
-          id: 1,
-          name: 'Makanan',
-        },
-        {
-          id: 2,
-          name: 'Kerajinan',
-        },
-        {
-          id: 1,
-          name: 'Elektronik',
-        },
-        {
-          id: 2,
-          name: 'Pakaian',
-        },
-        // Tambahkan kategori lainnya sesuai kebutuhan
-      ],
-    };
-  },
+  name: "ShopCategory",
 };
 </script>
 
-<style>
-/* Gaya tampilan tambahan sesuai kebutuhan */
+<style scoped>
+.category-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.category-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -10%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.category-image {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.category-image:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 </style>

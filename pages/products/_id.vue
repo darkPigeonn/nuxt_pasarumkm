@@ -16,12 +16,13 @@
             {{ product.name }}
           </h2>
           <div>
-            <v-rating
-            readonly
-            v-model="rating"
-            hover
-            half-increments
-          ></v-rating>
+            <div class="d-flex flex-row">
+
+              <v-icon class="yellow--text" style="align-items: baseline;">mdi-star</v-icon>
+              <p>4.5</p>
+            </div>
+            <span>Harga</span>
+            <h3 class="font-weight-bold">{{ product.price | currency }}</h3>
 
             <v-chip
               small
@@ -34,25 +35,30 @@
               {{ t }}
             </v-chip>
           </div>
-          <br />
 
           <hr/>
 
-          <div class="mt-5 mb-7" v-html="product.description">
+          <div class="mb-7" v-html="product.description">
           </div>
           <hr />
-          <span>Harga</span>
-          <h3>{{ product.price | currency }}</h3>
-          <hr />
-          <v-btn
-            :href='link'
-            target="_blank"
-            min-height="45"
-            min-width="170"
-            class="text-capitalize"
-            color="primary"
-            >Beli</v-btn
-          >
+          <div class="d-flex flex-row  justify-content-end">
+            <v-btn
+              :href='link'
+              target="_blank"
+
+              class="text-capitalize d-flex align-center mx-2"
+              color="primary"
+              >Beli</v-btn
+            >
+            <v-btn
+              :href='link'
+              target="_blank"
+
+              class="text-capitalize d-flex align-center mx-2"
+              color="primary"
+              >Bagikan</v-btn
+            >
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -84,4 +90,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.v-icon.theme--light.yellow--text {
+  color: yellow;
+}
+</style>

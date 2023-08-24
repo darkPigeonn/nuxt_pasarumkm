@@ -26,8 +26,8 @@
                 <v-list-item-avatar>
                   <v-img :src="c.image"></v-img>
                 </v-list-item-avatar>
-                <v-list-item-content>
-                  <v-list-item-title>
+                <v-list-item-content class="d-flex justify-content-center">
+                  <v-list-item-title class="d-flex justify-content-center">
                     {{ c.name }}
                   </v-list-item-title>
                 </v-list-item-content>
@@ -41,8 +41,8 @@
               <v-fade-transition :key="`product${p.id}-${i}`">
                 <v-col cols="12" md="4">
                   <v-card
-                    nuxt
-                    :to="`/products/${p.id}`"
+                  nuxt
+                  :to="`/products/${p._id}`"
                     color="surface"
                     class="el ma-2 mb-5 mr-5"
                   >
@@ -62,10 +62,10 @@
                         </v-row>
                       </template>
                     </v-img>
-                    <v-card-title class="text-md-body-1 font-weight-bold">{{
+                    <v-card-title class="text-md-body-1 font-weight-bold d-flex justify-content-center">{{
                       p.name
                     }}</v-card-title>
-                    <v-card-subtitle class="primary--text pb-3">
+                    <v-card-subtitle class="primary--text pb-3 d-flex justify-content-center">
                       {{ p.price | currency }}
                     </v-card-subtitle>
                     <v-card-text>

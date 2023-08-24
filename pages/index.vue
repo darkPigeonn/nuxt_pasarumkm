@@ -7,7 +7,7 @@
       <h1 class="text-md-h4 text-h6">Kategori Produk UMKM</h1>
       <CategoryCard />
     </v-container>
-    <v-container>
+    <v-container style="color: gray;">
       <h1 class="text-md-h4 text-h6">Daftar Produk</h1>
       <br />
       <ProductSlider :products="products" />

@@ -20,10 +20,12 @@
             </v-row>
           </template>
         </v-img>
-        <v-card-title class="text-md-body-1 font-weight-bold">{{
-          p.name
-        }}</v-card-title>
-        <v-card-subtitle class="primary--text pb-3">
+        <v-card-title class="text-md-body-1 font-weight-bold d-flex justify-content-center">
+          <span>
+            {{p.name}}
+          </span>
+        </v-card-title>
+        <v-card-subtitle class="d-flex justify-content-center">
           {{ p.price | currency }}
         </v-card-subtitle>
         <v-card-text>

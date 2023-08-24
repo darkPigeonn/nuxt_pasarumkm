@@ -19,12 +19,12 @@
       >
       <v-spacer />
 
-      <v-btn nuxt to="/shops" class="mr-md-2 mx-5" icon   style="color: rgb(0, 79, 17); font-weight:bold">
+      <v-btn href="/shops" class="mr-md-2 mx-5" icon   style="color: rgb(0, 79, 17); font-weight:bold">
         <!-- <v-icon size="30">mdi-package</v-icon> -->
         <v-text>Toko</v-text>
       </v-btn>
 
-      <v-btn nuxt to="/products" class="mr-md-2 mx-5" icon   style="color: rgb(0, 79, 17);font-weight:bold">
+      <v-btn href="/products" class="mr-md-2 mx-5" icon   style="color: rgb(0, 79, 17);font-weight:bold">
         <!-- <v-icon size="30">mdi-package</v-icon> -->
         <v-text>Produk</v-text>
       </v-btn>
