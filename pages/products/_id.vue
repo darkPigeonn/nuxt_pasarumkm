@@ -3,7 +3,7 @@
     <DesktopNav />
     <v-container v-if="product">
       <v-row class="mx-5 my-5">
-        <v-col>
+        <v-col cols="12" sm="6">
           <v-img
           width="100%"
           class="el rounded-lg"
@@ -11,7 +11,7 @@
           :src="product.images ? product.images[0] : require('@/assets/images/image_placeholder.jpeg')"
         ></v-img>
         </v-col>
-        <v-col>
+        <v-col cols="12" sm="6">
           <h2 class="text-md-h4 font-weight-bold">
             {{ product.name }}
           </h2>

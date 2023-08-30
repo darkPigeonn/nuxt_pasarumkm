@@ -5,7 +5,7 @@
         nuxt
         :to="`/products/${p._id}`"
         color="surface"
-        width="300"
+        width="200"
         class="el ma-2 mb-5 mr-5"
       >
         <v-img  :src="p.images ? p.images[0] : require('@/assets/images/image_placeholder.jpeg')" height="300">
@@ -20,12 +20,12 @@
             </v-row>
           </template>
         </v-img>
-        <v-card-title class="text-md-body-1 font-weight-bold d-flex justify-content-center">
+        <v-card-title class="text-md-body-1 font-weight-bold d-flex">
           <span>
             {{p.name}}
           </span>
         </v-card-title>
-        <v-card-subtitle class="d-flex justify-content-center">
+        <v-card-subtitle class="d-flex font-weight-bold text-h6">
           {{ p.price | currency }}
         </v-card-subtitle>
         <v-card-text>
