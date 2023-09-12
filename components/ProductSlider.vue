@@ -1,23 +1,21 @@
 <template>
-  <v-slide-group>
-    <v-slide-item v-for="(p, i) in products" :key="`hotProduct-${i}`">
+  <v-row>
+    <v-col v-for="(p, i) in products" :key="`hotProduct-${i}`" cols="12" sm="2">
       <v-card
         nuxt
         :to="`/products/${p._id}`"
         color="surface"
-        width="200"
-        class="el ma-2 mb-5 mr-5"
+        width="500"
+        class="el card-product"
       >
-        <v-img  :src="p.images ? p.images[0] : require('@/assets/images/image_placeholder.jpeg')" height="300">
-          <template #placeholder>
-            <v-row class="fill-height" justify="center" align="center">
+        <v-img  :src="p.images ? p.images[0] : require('@/assets/images/image_placeholder.jpeg')" height="200">
+          <template v-slot:placeholder>
+            <div class="d-flex align-center justify-center fill-height">
               <v-progress-circular
-                width="2"
-                size="100"
-                color="primary"
+                color="grey-lighten-4"
                 indeterminate
               ></v-progress-circular>
-            </v-row>
+            </div>
           </template>
         </v-img>
         <v-card-title class="text-md-body-1 font-weight-bold d-flex">
@@ -28,21 +26,19 @@
         <v-card-subtitle class="d-flex font-weight-bold text-h6">
           {{ p.price | currency }}
         </v-card-subtitle>
+
         <v-card-text>
           <v-chip
             x-small
             label
             outlined
-            class="mr-1"
-            v-for="(t, i) in p.tags"
-            :key="`prod${p.id}-${i}`"
           >
-            {{ t }}
+          {{p.shopName}}
           </v-chip>
         </v-card-text>
       </v-card>
-    </v-slide-item>
-  </v-slide-group>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

@@ -5,11 +5,20 @@
       <v-row class="mx-5 my-5">
         <v-col cols="12" sm="6">
           <v-img
-          width="100%"
           class="el rounded-lg"
-          height="50vh"
+          cover
+          height="500"
           :src="product.images ? product.images[0] : require('@/assets/images/image_placeholder.jpeg')"
-        ></v-img>
+        >
+        <template v-slot:placeholder>
+          <div class="d-flex align-center justify-center fill-height">
+            <v-progress-circular
+              color="grey-lighten-4"
+              indeterminate
+            ></v-progress-circular>
+          </div>
+        </template>
+      </v-img>
         </v-col>
         <v-col cols="12" sm="6">
           <h2 class="text-md-h4 font-weight-bold">
@@ -45,7 +54,6 @@
             <v-btn
               :href='link'
               target="_blank"
-
               class="text-capitalize d-flex align-center mx-2"
               color="primary"
               >Beli</v-btn
@@ -84,7 +92,7 @@ export default {
   data() {
     return {
       product: null,
-      link: 'https://api.whatsapp.com/send?phone=6285735071598&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
+      link: 'https://api.whatsapp.com/send?phone=6281359326351&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
   },
 };
