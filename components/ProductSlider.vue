@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="(p, i) in products" :key="`hotProduct-${i}`" cols="12" sm="2">
+    <v-col v-for="(p, i) in products" :key="`hotProduct-${i}`" cols="6" sm="2">
       <v-card
         nuxt
         :to="`/products/${p._id}`"
@@ -24,7 +24,9 @@
           </span>
         </v-card-title>
         <v-card-subtitle class="d-flex font-weight-bold text-h6">
-          {{ p.price | currency }}
+          <span>
+            {{ p.price | currency }}
+          </span>
         </v-card-subtitle>
 
         <v-card-text>
