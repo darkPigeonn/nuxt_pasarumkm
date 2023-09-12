@@ -20,7 +20,7 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: "Free eCommerce Site Built With NuxtJS ❤",
+        content: "Pasar UMKM",
       },
       { name: "format-detection", content: "telephone=no" },
     ],
