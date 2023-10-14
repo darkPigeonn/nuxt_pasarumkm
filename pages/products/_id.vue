@@ -59,13 +59,18 @@
               >Beli</v-btn
             >
             <v-btn
-              :href='link'
+              :href='whatsappShareLink'
               target="_blank"
 
               class="text-capitalize d-flex align-center mx-2"
               color="primary"
               >Bagikan</v-btn
             >
+            <v-btn
+            @click="$store.commit('cart/AddToCart', product)"
+            class="text-capitalize"
+            color="primary"
+            >+ Keranjang</v-btn>
           </div>
         </v-col>
       </v-row>
@@ -92,8 +97,17 @@ export default {
   data() {
     return {
       product: null,
-      link: 'https://api.whatsapp.com/send?phone=6281359326351&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
+      link: 'https://api.whatsapp.com/send?phone=6285733081830&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
+  },
+  computed: {
+    whatsappShareLink() {
+      // Gantilah dengan pesan yang ingin Anda bagikan
+      const messageToShare = "Hallo, ada produk menarik ni di Toko kami : https://pasar.keuskupansurabaya.org"+ this.$route.fullPath;
+      // Encode pesan dengan encodeURIComponent
+      const encodedMessage = encodeURIComponent(messageToShare);
+      return `https://api.whatsapp.com/send?text=${encodedMessage}`;
+    },
   },
 };
 </script>

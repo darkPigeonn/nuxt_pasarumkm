@@ -4,7 +4,7 @@
     <br />
     <div class="text-center" v-if="$store.state.cart.cart.length == 0">
       <v-img class="d-block mx-auto" src="/emptycart.svg" width="500"></v-img>
-      <p>No Items Just Yet</p>
+      <p>Belum ada produk yang masuk keranjang </p>
     </div>
     <v-container>
       <div class="mb-3" v-if="$store.state.cart.cart.length > 0">
@@ -14,7 +14,7 @@
           min-width="150"
           min-height="45"
           color="primary"
-          >Checkout</v-btn
+          >Beli</v-btn
         >
       </div>
       <v-row>
@@ -36,7 +36,7 @@
                   <v-img
                     class="rounded-lg"
                     height="220"
-                    :src="c.product.image"
+                    :src="c.product.images[0]"
                   ></v-img>
                 </v-col>
                 <v-col class="pl-5 pt-2" md="9">
@@ -44,7 +44,7 @@
                     {{ c.product.name }} x {{ c.quantity }}
                   </h2>
                   <p class="primary--text mt-2">
-                    {{ $formatMoney(c.product.price * c.quantity) }}
+                    {{ c.product.price | currency }}
                   </p>
                   <v-btn
                     @click="$store.commit('cart/IncreaseItemCount', i)"
@@ -65,6 +65,16 @@
           </v-col>
         </template>
       </v-row>
+      <br/>
+      <div class="mb-3" v-if="$store.state.cart.cart.length > 0">
+        <v-btn
+          @click="buyOnWhatsApp"
+          min-width="150"
+          min-height="45"
+          color="primary"
+          >Beli</v-btn
+        >
+      </div>
     </v-container>
     <br /><br />
     <Footer />
@@ -73,7 +83,48 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+  methods: {
+    buyOnWhatsApp() {
+      // Gantilah dengan pesan atau tautan yang ingin Anda bagikan
+      const cart = this.$store.state.cart.cart;
+      const cartNew = [];
+
+            // Mengisi cartNew dengan data yang diinginkan
+      for (let index = 0; index < cart.length; index++) {
+        const element = cart[index];
+        const dataNew = {
+          'Nama Produk': element.product.name,
+          'Jumlah': element.quantity,
+        };
+        cartNew.push(dataNew);
+      }
+
+      // Membuat pesan untuk WhatsApp
+      const messageToShare = `Halo! Saya tertarik dengan produk Anda di Pasar UMKM. Berikut produk yang ingin saya beli: ${generateCartMessage(cartNew)}`;
+
+
+      const encodedMessage = encodeURIComponent(messageToShare);
+      return `https://api.whatsapp.com/send?phone=6285733081830&text=${encodedMessage}`;
+
+      // Fungsi untuk menghasilkan pesan keranjang belanja
+      function generateCartMessage(cartData) {
+        if (cartData.length === 0) {
+          return 'Tidak ada produk yang dipilih.';
+        }
+
+        let message = '';
+        cartData.forEach((item, index) => {
+          message += `\n${index + 1}. ${item['Nama Produk']} (${item['Jumlah']} pcs)`;
+        });
+
+        return message;
+      }
+
+    },
+  },
+};
 </script>
 
 <style></style>
