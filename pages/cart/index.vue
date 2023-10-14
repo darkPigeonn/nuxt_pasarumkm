@@ -65,7 +65,7 @@
         </template>
       </v-row>
       <br/>
-      <div class="mb-3 d-flex justify-content-endupda" v-if="$store.state.cart.cart.length > 0">
+      <div class="mb-3 d-flex justify-content-end" v-if="$store.state.cart.cart.length > 0">
         <v-btn
           @click="buyOnWhatsApp"
           min-width="150"
@@ -105,7 +105,9 @@ export default {
 
 
       const encodedMessage = encodeURIComponent(messageToShare);
-      return `https://api.whatsapp.com/send?phone=6285733081830&text=${encodedMessage}`;
+      // Membuka tautan ke WhatsApp
+      const whatsappLink =  `https://api.whatsapp.com/send?phone=6285733081830&text=${encodedMessage}`;
+      window.location.href = whatsappLink;
 
       // Fungsi untuk menghasilkan pesan keranjang belanja
       function generateCartMessage(cartData) {
