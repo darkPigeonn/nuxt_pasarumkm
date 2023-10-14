@@ -7,10 +7,9 @@
       <p>Belum ada produk yang masuk keranjang </p>
     </div>
     <v-container>
-      <div class="mb-3" v-if="$store.state.cart.cart.length > 0">
+      <div class="mb-3 d-flex justify-content-end" v-if="$store.state.cart.cart.length > 0">
         <v-btn
-          nuxt
-          to="/cart/confirm"
+          @click="buyOnWhatsApp"
           min-width="150"
           min-height="45"
           color="primary"
@@ -66,7 +65,7 @@
         </template>
       </v-row>
       <br/>
-      <div class="mb-3" v-if="$store.state.cart.cart.length > 0">
+      <div class="mb-3 d-flex justify-content-endupda" v-if="$store.state.cart.cart.length > 0">
         <v-btn
           @click="buyOnWhatsApp"
           min-width="150"
