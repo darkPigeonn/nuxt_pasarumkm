@@ -101,7 +101,7 @@ export default {
       }
 
       // Membuat pesan untuk WhatsApp
-      const messageToShare = `Halo! Saya tertarik dengan produk Anda di Pasar UMKM. Berikut produk yang ingin saya beli: ${generateCartMessage(cartNew)}`;
+      const messageToShare = `Halo! Saya tertarik dengan produk Anda di Pasar PSE. Berikut produk yang ingin saya beli: ${generateCartMessage(cartNew)}`;
 
 
       const encodedMessage = encodeURIComponent(messageToShare);

@@ -15,7 +15,7 @@
         light
         class="text-md-h5 font-weight-bold pointer"
         style="color: rgb(0, 79, 17);"
-        >Pasar UMKM</v-toolbar-title
+        >Pasar PSE</v-toolbar-title
       >
       <v-spacer />
 

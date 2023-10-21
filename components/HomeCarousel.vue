@@ -10,8 +10,8 @@
           <img :src='require("@/assets/images/bg2.png")' class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
-          <h1 class="display-5 fw-bold lh-1 mb-3">PASAR UMKM</h1>
-          <p class="lead">Temukan produk menarik dan berkualitas di Pasar UMKM, serta membantu para UMKM untuk semakin tumbuh bersama dengan semangat komunio</p>
+          <h1 class="display-5 fw-bold lh-1 mb-3">PASAR PSE</h1>
+          <p class="lead">Temukan produk menarik dan berkualitas di Pasar PSE, serta membantu para UMKM untuk semakin tumbuh bersama dengan semangat komunio</p>
         </div>
       </div>
     </div>

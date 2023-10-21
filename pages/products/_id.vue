@@ -97,7 +97,7 @@ export default {
   data() {
     return {
       product: null,
-      link: 'https://api.whatsapp.com/send?phone=6285733081830&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
+      link: 'https://api.whatsapp.com/send?phone=6285733081830&text=Halo! Saya tertarik dengan produk Anda di Pasar PSE https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
   },
   computed: {

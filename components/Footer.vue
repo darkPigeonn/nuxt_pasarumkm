@@ -6,8 +6,8 @@
     class="pa-md-10 pa-5 text-center"
     color="surface"
   >
-    <h2 class="text-md-h6 font-weight-bold">Pasar UMKM Keuskupan Surabaya</h2>
-    <p class="text-md-body-2 mt-5">Tempat jual beli online produk UMKM </p>
+    <h2 class="text-md-h6 font-weight-bold">Pasar PSE</h2>
+    <p class="text-md-body-2 mt-5">Tempat jual beli online produk - produk UMKM binaan PSE</p>
     <!-- <div class="text-center">
       <v-btn
         color="surface"
