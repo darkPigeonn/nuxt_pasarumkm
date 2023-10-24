@@ -8,17 +8,17 @@
     </div>
     <v-container>
       <div class="mb-3 d-flex justify-content-end" v-if="$store.state.cart.cart.length > 0">
-        <v-btn
+        <!-- <v-btn
           @click="buyOnWhatsApp"
           min-width="150"
           min-height="45"
           color="primary"
           >Beli</v-btn
-        >
+        > -->
       </div>
       <v-row>
         <template v-for="(c, i) in $store.state.cart.cart">
-          <v-col :key="`cartItem${i}`">
+          <v-col :key="`cartItem${i}`" cols="6" sm="12">
             <v-card color="surface" flat>
               <v-btn
                 @click="$store.commit('cart/RemoveCartItem', i)"
@@ -39,7 +39,7 @@
                   ></v-img>
                 </v-col>
                 <v-col class="pl-5 pt-2" md="9">
-                  <h2 class="text-md-h6 font-weight-bold">
+                  <h2 class="text-h6 font-weight-bold">
                     {{ c.product.name }} x {{ c.quantity }}
                   </h2>
                   <p class="primary--text mt-2">
@@ -78,6 +78,7 @@
     <br /><br />
     <Footer />
     <ScrollTop />
+
   </div>
 </template>
 

@@ -25,7 +25,7 @@
         </v-card-title>
         <v-card-subtitle class="d-flex font-weight-bold text-h6">
           <span>
-            {{ p.price | currency }}
+            Rp. {{ p.price | currency }}
           </span>
         </v-card-subtitle>
 

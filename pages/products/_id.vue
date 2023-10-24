@@ -31,7 +31,7 @@
               <p>4.5</p>
             </div>
             <span>Harga</span>
-            <h3 class="font-weight-bold">{{ product.price | currency }}</h3>
+            <h3 class="font-weight-bold">Rp. {{ product.price | currency }}</h3>
 
             <v-chip
               small
@@ -78,6 +78,7 @@
     <br /><br />
     <Footer />
     <ScrollTop />
+
   </div>
 </template>
 

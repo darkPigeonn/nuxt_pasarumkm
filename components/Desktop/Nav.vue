@@ -31,22 +31,22 @@
       <v-badge
         v-if="$store.state.cart.cart.length > 0"
         overlap
+        offset-x="20"
+        offset-y="20"
         :content="`${$store.state.cart.cart.length}`"
       >
         <v-btn nuxt to="/cart" icon style="color: rgb(0, 79, 17);font-weight:bold">
-          <v-icon size="20">mdi-cart-outline</v-icon>
-
+          <v-icon size="25">mdi-cart-outline</v-icon>
         </v-btn>
       </v-badge>
       <v-btn v-else nuxt to="/cart" icon style="color: rgb(0, 79, 17);font-weight:bold">
         <v-icon size="20">mdi-cart-outline</v-icon>
 
       </v-btn>
-      <v-divider vertical class="mx-md-5 mx-2" />
-      <v-btn @click="toggleTheme" icon>
+      <!-- <v-divider vertical class="mx-md-5 mx-2" /> -->
+      <!-- <v-btn @click="toggleTheme" icon>
         <v-icon size="20">mdi-brightness-7</v-icon>
-
-      </v-btn>
+      </v-btn> -->
     </v-app-bar>
   </div>
 </template>
