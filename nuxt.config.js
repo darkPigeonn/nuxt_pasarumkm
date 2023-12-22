@@ -22,7 +22,6 @@ export default {
         name: "description",
         content: "Pasar PSE",
       },
-      { name: "format-detection", content: "telephone=no" },
     ],
 
     link: [
