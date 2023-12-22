@@ -110,7 +110,8 @@ export default {
       return `https://api.whatsapp.com/send?text=${encodedMessage}`;
     },
   },
-  head: {
+  head() {
+    return  {
     title: 'Pasar UMKM',
           meta: [
               {
@@ -140,6 +141,7 @@ export default {
               }
           ]
             }
+  }
 };
 </script>
 
