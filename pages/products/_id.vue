@@ -84,13 +84,7 @@
 
 <script>
 export default {
-  async created() {
-    let d = await this.$content("products")
-      .where({ id: parseInt(this.$route.params.id) })
-      .limit(1)
-      .fetch();
-    this.product = d[0];
-  },
+
   async fetch() {
     const response = await this.$axios.$get('/pse/shops/products/view/'+this.$route.params.id);
     this.product = response;
