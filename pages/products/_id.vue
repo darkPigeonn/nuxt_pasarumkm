@@ -91,7 +91,7 @@ export default {
   },
   data() {
     return {
-      product: null,
+      product: {},
       link: 'https://api.whatsapp.com/send?phone=6285733081830&text=Halo! Saya tertarik dengan produk Anda di Pasar PSE https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
   },
