@@ -78,37 +78,37 @@ export default {
     };
   },
   head() {
-            return {
-                title: 'Pasar UMKM',
-                meta: [
-                    {
-                    hid: 'og:image',
-                    property: 'og:image',
-                    content: this.product.images[0]
-                    },
-                    {
-                    hid: 'description',
-                    property: 'description',
-                    content: this.product.description
-                    },
-                    {
-                    hid: 'og:description',
-                    property: 'og:description',
-                    content: this.product.description
-                    },
-                    {
-                    hid: 'og:title',
-                    property: 'og:title',
-                    content: this.product.name
-                    },
-                    {
-                    hid: 'og:url',
-                    name: 'og:url',
-                    content: `https://pasar.keuskupansurabaya.org/products/${this.product.id}`
-                    }
-                ]
-            }
-        },
+      return {
+          title: 'Pasar UMKM',
+          meta: [
+              {
+              hid: 'og:image',
+              property: 'og:image',
+              content: this.product.images[0]
+              },
+              {
+              hid: 'description',
+              property: 'description',
+              content: this.product.description
+              },
+              {
+              hid: 'og:description',
+              property: 'og:description',
+              content: this.product.description
+              },
+              {
+              hid: 'og:title',
+              property: 'og:title',
+              content: this.product.name
+              },
+              {
+              hid: 'og:url',
+              name: 'og:url',
+              content: `https://pasar.keuskupansurabaya.org/products/${this.product.id}`
+              }
+          ]
+      }
+  },
 };
 </script>
 
