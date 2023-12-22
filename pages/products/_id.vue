@@ -69,8 +69,7 @@ export default {
   async fetch() {
     const response = await this.$axios.$get('/pse/shops/products/view/'+this.$route.params.id);
     this.product = response;
-    console.log(this.$route);
-    console.log(this.product);
+
   },
   data() {
     return {
@@ -78,6 +77,38 @@ export default {
       link: 'https://api.whatsapp.com/send?phone=6285735071598&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
   },
+  head() {
+            return {
+                title: 'Pasar UMKM',
+                meta: [
+                    {
+                    hid: 'og:image',
+                    property: 'og:image',
+                    content: this.product.images[0]
+                    },
+                    {
+                    hid: 'description',
+                    property: 'description',
+                    content: this.product.description
+                    },
+                    {
+                    hid: 'og:description',
+                    property: 'og:description',
+                    content: this.product.description
+                    },
+                    {
+                    hid: 'og:title',
+                    property: 'og:title',
+                    content: this.product.name
+                    },
+                    {
+                    hid: 'og:url',
+                    name: 'og:url',
+                    content: `https://pasar.keuskupansurabaya.org/products/${this.product.id}`
+                    }
+                ]
+            }
+        },
 };
 </script>
 
