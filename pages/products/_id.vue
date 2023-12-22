@@ -77,9 +77,8 @@ export default {
       link: 'https://api.whatsapp.com/send?phone=6285735071598&text=Halo! Saya tertarik dengan produk Anda di Pasar UMKM https://pasar.keuskupansurabaya.org' + this.$route.fullPath
     };
   },
-  head() {
-      return {
-          title: 'Pasar UMKM',
+  head: {
+    title: 'Pasar UMKM',
           meta: [
               {
               hid: 'og:image',
@@ -107,7 +106,6 @@ export default {
               content: `https://pasar.keuskupansurabaya.org/products/${this.product.id}`
               }
           ]
-      }
   },
 };
 </script>
