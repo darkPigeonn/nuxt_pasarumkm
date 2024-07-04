@@ -11,6 +11,7 @@
       <h1 class="text-md-h4 text-h6">Daftar Produk</h1>
       <br />
       <ProductSlider :products="products" />
+      <NuxtLink to="/products" class="btn btn-primary float-right mt-2 text-white">Lihat Lebih Banyak</NuxtLink>
       <br />
       <hr>
       <br />
@@ -36,19 +37,18 @@ export default {
   //   this.products = await this.$content("products").fetch();
   // },
   async fetch() {
-    const response = await this.$axios.$get('/pse/shops/products/get-all', {
-        params: {
-          limit: 3, // Nilai limit yang ingin Anda gunakan
-        },
+    const response = await this.$axios.$get('/pse/shops/products/get-all/1', {
+
+
       });
     const response2 = await this.$axios.$get('/pse/shops/get-all', {
         params: {
           limit: 3, // Nilai limit yang ingin Anda gunakan
         },
     });
-    this.products = response;
+    this.products = response.slice(0, 6);
     this.shops = response2;
-    console.log(this.products);
+
   },
   data() {
     return {

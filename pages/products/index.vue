@@ -84,6 +84,9 @@
                 </v-col>
               </v-fade-transition>
             </template>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-primary" @click="loadMore()">Lebih Banyak</button>
+            </div>
           </v-row>
         </v-col>
       </v-row>
@@ -101,18 +104,20 @@ export default {
   //   this.categories = await this.$content("category").fetch();
   // },
   async fetch() {
-    const response = await this.$axios.$get('/pse/shops/products/get-all', {
-        params: {
-          limit: 3, // Nilai limit yang ingin Anda gunakan
-        },
+    const response = await this.$axios.$get('/pse/shops/products/get-all/'+this.page, {
       });
-    this.products = response;
+      if(this.page> 1){
+        this.products = this.products.concat(response);
+      }else{
+        this.products = response;
+      }
   },
   data() {
     return {
       products: null,
       categories: null,
       search: null,
+      page : 1
     };
   },
   computed: {
@@ -132,6 +137,12 @@ export default {
         );
       });
     },
+  },
+  methods: {
+    loadMore(){
+      this.page += 1
+      this.$fetch()
+    }
   },
 };
 </script>
